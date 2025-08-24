@@ -20,7 +20,7 @@ Built as part of a **Capstone Project**.
 ---
 
 ## 🗂️ Project Structure
-
+```
 SmartStudyPlanner/
 │
 ├── public/ # Static files
@@ -47,7 +47,7 @@ SmartStudyPlanner/
 │
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## ⚙️ Installation & Setup
@@ -57,10 +57,8 @@ SmartStudyPlanner/
    git clone https://github.com/your-username/smart-study-planner.git
    cd smart-study-planner
 2. Install dependencies:
-```bash
 npm install
 
 
 3. Start development server:
-```bash
 npm start
