@@ -1,12 +1,66 @@
-# React + Vite
+# 📚 Smart Study Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, responsive React application that helps students organize their study tasks, manage progress, and stay productive.  
+Built as part of a **Capstone Project**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Add, complete, and delete study tasks  
+- 💾 Local storage support (tasks persist after refresh)  
+- 📱 Fully responsive design (desktop & mobile)  
+- 🎨 Styled with custom global + responsive CSS  
+- 🖥️ Pages included:
+  - **Home** – Welcome screen with project overview
+  - **Dashboard** – Core planner functionality (task manager)
+  - **About** – Project information
+  - **Profile** – Placeholder for future user details
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🗂️ Project Structure
+
+SmartStudyPlanner/
+│
+├── public/ # Static files
+│ └── index.html
+│
+├── src/
+│ ├── components/ # Reusable components
+│ │ ├── Navbar.jsx
+│ │ ├── Footer.jsx
+│ │ └── TaskList.jsx
+│ │
+│ ├── pages/ # Main application pages
+│ │ ├── Home.jsx
+│ │ ├── Dashboard.jsx
+│ │ ├── About.jsx
+│ │ └── Profile.jsx
+│ │
+│ ├── styles/ # CSS files
+│ │ ├── global.css
+│ │ └── responsive.css
+│ │
+│ ├── App.jsx # Main app container
+│ └── index.js # Entry point
+│
+├── package.json
+└── README.md
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+```bash
+   git clone https://github.com/your-username/smart-study-planner.git
+   cd smart-study-planner
+2. Install dependencies:
+```bash
+npm install
+
+
+3. Start development server:
+```bash
+npm start
