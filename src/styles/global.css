@@ -5,13 +5,59 @@ background: #f9f9f9;
 color: #333;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+body.light {
+  background: #f9f9f9;
+  color: #333;
+}
+
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+.theme-toggle {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 10px;
+}
 .page-container {
 padding: 2rem;
 max-width: 800px;
 margin: auto;
 }
+.category-badge {
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 8px;
+}
 
+.category-badge.math { background: #ffd166; }
+.category-badge.science { background: #06d6a0; }
+.category-badge.history { background: #ef476f; color: white; }
+.category-badge.general { background: #118ab2; color: white; }
 
 h1 {
 color: #2a4d69;
@@ -44,4 +90,119 @@ padding: 0.5rem;
 border: 1px solid #ccc;
 border-radius: 4px;
 width: 100%;
+}
+.progress-container {
+  background: #ddd;
+  height: 8px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+.progress-bar {
+  background: #06d6a0;
+  height: 8px;
+  border-radius: 5px;
+}
+.nav-root {
+  background-color: #1f2937; /* dark gray */
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #3b82f6; /* blue underline */
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1f2937;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+.p-6 {
+  padding: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+form input, form select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+form button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+form button:hover {
+  background-color: #2563eb;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.pomodoro {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-align: center;
 }
