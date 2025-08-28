@@ -1,24 +1,47 @@
-function TaskItem({ task, index, toggleComplete, deleteTask }) {
-  const completedCount = tasks.filter(task => task.completed).length;
-  const progress = (completedCount / tasks.length) * 100 || 0;
+import React from "react";
+
+const TaskList = ({ tasks, toggleTaskCompletion, deleteTask }) => {
+  if (tasks.length === 0) {
+    return <p className="text-gray-500">No tasks yet. Add one above!</p>;
+  }
 
   return (
-    <li>
-      <div className="progress-container">
-  <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-</div>
-<p>{completedCount} / {tasks.length} tasks completed</p>
-<TaskList tasks={filteredTasks} setTasks={setTasks} />
-      <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-        {task.text}
-      </span>
-      <span className={`category-badge ${task.category.toLowerCase()}`}>
-    {task.category}
-    </span>
-
-      <button onClick={() => toggleComplete(index)}>✓</button>
-      <button onClick={() => deleteTask(index)}>X</button>
-    </li>
+    <ul className="space-y-3">
+      {tasks.map((task) => (
+        <li
+          key={task.id}
+          className="flex justify-between items-center p-3 border rounded-lg dark:border-gray-600"
+        >
+          <div>
+            <h4
+              className={`font-semibold ${
+                task.completed ? "line-through text-gray-500" : ""
+              }`}
+            >
+              {task.title}
+            </h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {task.subject} — Due: {task.dueDate}
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => toggleTaskCompletion(task.id)}
+              className="px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded"
+            >
+              {task.completed ? "Undo" : "Done"}
+            </button>
+            <button
+              onClick={() => deleteTask(task.id)}
+              className="px-2 py-1 bg-red-600 hover:bg-red-700 text-white rounded"
+            >
+              Delete
+            </button>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
-}
-export default TaskItem;
+};
+
+export default TaskList;
