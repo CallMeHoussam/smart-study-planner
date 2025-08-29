@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import TaskList from "../components/TaskList.jsx";
 import Pomodoro from "../components/Pomodoro.jsx";
-import { validateTask } from "../utils/Validation.js";
 
 const Dashboard = ({ tasks, setTasks }) => {
   const [newTask, setNewTask] = useState({ 
@@ -48,12 +47,6 @@ const Dashboard = ({ tasks, setTasks }) => {
 
   const handleAddTask = (e) => {
     e.preventDefault();
-
-    const validation = validateTask(newTask);
-    if (!validation.isValid) {
-      alert(`Please fix the following errors:\n${Object.values(validation.errors).join('\n')}`);
-      return;
-    }
 
     if (!newTask.title.trim()) return;
 

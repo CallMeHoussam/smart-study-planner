@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { validateProfile } from "../utils/Validation.js";
 
-const handleSave = () => {
-  const validation = validateProfile({ name, goal });
-  if (!validation.isValid) {
-    alert(`Please fix the following errors:\n${Object.values(validation.errors).join('\n')}`);
-    return;
-  }
-
-  localStorage.setItem("ssp_name", name);
-  localStorage.setItem("ssp_goal", goal);
-};
 
 export default function Profile() {
   const [name, setName] = useState(localStorage.getItem("ssp_name") || "");
