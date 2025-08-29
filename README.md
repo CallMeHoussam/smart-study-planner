@@ -40,7 +40,7 @@ Built as part of a **Capstone Project**.
 ```
 SmartStudyPlanner/
 │
-├── public/ # Static files
+├── public/
 │ └── index.html
 │
 ├── src/
