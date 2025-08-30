@@ -1,28 +1,24 @@
 @media (max-width: 768px) {
-.page-container {
-padding: 1rem;
+  .page-container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
 }
-
-
-h1 {
-font-size: 1.5rem;
-}
-
-
-.btn-primary {
-width: 100%;
-text-align: center;
-}
-}
-
 
 @media (max-width: 480px) {
-body {
-font-size: 14px;
-}
+  body {
+    font-size: 14px;
+  }
 
-
-h1 {
-font-size: 1.2rem;
-}
+  h1 {
+    font-size: 1.2rem;
+  }
 }

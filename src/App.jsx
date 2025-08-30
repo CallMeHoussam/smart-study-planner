@@ -10,25 +10,28 @@ import About from "./pages/About";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    return saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isLoading, setIsLoading] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
+
   useEffect(() => {
-  const isDark = localStorage.getItem('theme') === 'dark';
-  document.body.classList.toggle('dark-theme', isDark);
-  document.body.classList.toggle('light-theme', !isDark);
-}, []);
+    const isDark = localStorage.getItem('theme') === 'dark';
+    document.body.classList.toggle('dark-theme', isDark);
+    document.body.classList.toggle('light-theme', !isDark);
+  }, []);
+
   useEffect(() => {
-    if (darkMode) {
+    if (isDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
-  }, [darkMode]);
+  }, [isDarkMode]);
+
   useEffect(() => {
     try {
       const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -36,18 +39,17 @@ function App() {
     } catch (error) {
       console.error("Error loading tasks:", error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }, []);
 
-  // Update localStorage when tasks change
   useEffect(() => {
     if (tasks.length > 0) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
   }, [tasks]);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <Loading message="Loading your study planner..." />
